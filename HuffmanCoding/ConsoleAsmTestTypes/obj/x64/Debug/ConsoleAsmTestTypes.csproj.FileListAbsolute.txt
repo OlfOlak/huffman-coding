@@ -1,0 +1,6 @@
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.exe.config
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.exe
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.pdb
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.csproj.CoreCompileInputs.cache
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.exe
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.pdb

@@ -1,0 +1,3 @@
+LIBRARY DllAsm
+EXPORTS zad1
+EXPORTS zad2
