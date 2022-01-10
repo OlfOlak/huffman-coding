@@ -35,11 +35,31 @@ namespace ConsoleAsmTestTypes
 				"Praesent mattis ultricies malesuada. Nam pretium lectus a ultrices suscipit. Vestibulum nunc ligula, eleifend id finibus ac, euismod ut odio. Ut finibus, orci nec congue rutrum, lorem mi commodo neque, ut congue metus velit sed urna.Mauris ac neque elit. Mauris dui sapien, fermentum a sagittis eget, tincidunt in orci.Praesent tempus non felis sit amet pharetra.Donec nec orci magna. Etiam vulputate, felis vel efficitur facilisis, nisi dolor aliquet nibh, eget laoreet ligula enim vitae metus.Sed tempor ac tellus in sollicitudin.Mauris suscipit gravida elit a vulputate. Duis fringilla urna at volutpat cursus. Etiam quis libero nec lectus tristique congue.Phasellus quis odio quis metus scelerisque varius." + 
 				"Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Ut laoreet libero mi, ac interdum nulla aliquam sit amet.Duis pellentesque dictum ligula ac condimentum. Pellentesque non neque congue, accumsan felis condimentum, aliquam mauris.Suspendisse potenti. Vivamus sagittis tellus et convallis aliquam. Nulla neque orci, tempus sit amet convallis ac, venenatis lobortis magna.Fusce dignissim, quam vel suscipit finibus, mi nisi tempus leo, eget blandit neque ante sit amet mi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Aliquam fermentum gravida metus, eu auctor lacus gravida nec. Aliquam posuere cursus rhoncus." +
 				"Cras sagittis elit placerat urna gravida hendrerit.Phasellus suscipit risus ante, sit amet ultricies ligula convallis sit amet. In efficitur, enim sit amet laoreet cursus, enim dolor lobortis dolor, quis congue ipsum magna sed metus. Praesent imperdiet massa at maximus finibus. Nunc aliquet quis mauris eu pellentesque. Sed est lectus, fringilla a faucibus vel, pretium in turpis.Sed non arcu nec lectus suscipit aliquam.Suspendisse potenti. Morbi auctor orci turpis, vel hendrerit augue porttitor at. Aenean consequat, lectus in fringilla facilisis, arcu augue egestas ex, ut interdum purus mi in urna.";
+			//string str = "This is an example for Huffman coding";
+			Console.WriteLine("Original string:");
+			Console.WriteLine(str);
+
+
 			byte[] originalData = System.Text.Encoding.Default.GetBytes(str);
 			uint originalDataSize = (uint)str.Length;
 			byte[] compressedData = new byte[originalDataSize * (101 / 100) + 320];
 
 			int compressedDataSize = Compress(originalData, compressedData, originalDataSize);
+
+			byte[] decompressedData = new byte[originalDataSize];
+
+			Decompress(compressedData, decompressedData, (uint)compressedDataSize, originalDataSize);
+
+			string decompressedString = System.Text.Encoding.UTF8.GetString(decompressedData);
+			Console.WriteLine("Decompressed string:");
+			Console.WriteLine(decompressedString);
+
+			Console.WriteLine("Original data size: " + originalDataSize);
+			Console.WriteLine("Compressed data size: " + compressedDataSize);
+
+			Console.ReadLine();
+
+			//int decompressedDataSize = (uint)decompressedData.Length;
 
 			//unsafe
 			//{
@@ -63,12 +83,6 @@ namespace ConsoleAsmTestTypes
 			//        }
 			//    }
 			//}
-
-			Console.WriteLine("Original data size: " + originalDataSize);
-			Console.WriteLine("Compressed data size: " + compressedDataSize);
-
-			Console.ReadLine();
-
 
 		}
 
@@ -288,6 +302,105 @@ namespace ConsoleAsmTestTypes
 			}
 
 			return (int)totalBytes;
+		}
+
+
+		// DECOMPRESSION
+		///////////////////////////////////////////////////////////////////////////
+
+		public class DecodeNode
+		{
+			public DecodeNode ChildA;
+			public DecodeNode ChildB;
+			public int Symbol;
+		}
+
+		private static uint readBit(ref BitStream stream)
+		{
+			byte[] buffer = stream.BytePointer;
+			uint bit = stream.BitPosition;
+
+			uint x = (uint)(Convert.ToBoolean((buffer[stream.Index] & (1 << (int)(7 - bit)))) ? 1 : 0);
+			bit = (bit + 1) & 7;
+
+			if (!Convert.ToBoolean(bit))
+			{
+				++stream.Index;
+			}
+
+			stream.BitPosition = bit;
+
+			return x;
+		}
+
+		private static uint read8Bits(ref BitStream stream)
+		{
+			byte[] buffer = stream.BytePointer;
+			uint bit = stream.BitPosition;
+			uint x = (uint)((buffer[stream.Index] << (int)bit) | (buffer[stream.Index + 1] >> (int)(8 - bit)));
+			++stream.Index;
+
+			return x;
+		}
+
+		private static DecodeNode recoverTree(DecodeNode[] nodes, ref BitStream stream, ref uint nodenum)
+		{
+			DecodeNode thisNode;
+
+			thisNode = nodes[nodenum];
+			nodenum = nodenum + 1;
+			thisNode.Symbol = -1;
+			thisNode.ChildA = null;
+			thisNode.ChildB = null;
+
+			if (Convert.ToBoolean(readBit(ref stream)))
+			{
+				thisNode.Symbol = (int)read8Bits(ref stream);
+				return thisNode;
+			}
+
+			thisNode.ChildA = recoverTree(nodes, ref stream, ref nodenum);
+			thisNode.ChildB = recoverTree(nodes, ref stream, ref nodenum);
+
+			return thisNode;
+		}
+
+		public static void Decompress(byte[] input, byte[] output, uint inputSize, uint outputSize)
+		{
+			DecodeNode[] nodes = new DecodeNode[MAX_TREE_NODES];
+
+			for (int counter = 0; counter < nodes.Length; ++counter)
+			{
+				nodes[counter] = new DecodeNode();
+			}
+
+			DecodeNode root, node;
+			BitStream stream = new BitStream();
+			uint i, nodeCount;
+			byte[] buffer;
+
+			if (inputSize < 1)
+				return;
+
+			initBitstream(ref stream, input);
+			nodeCount = 0;
+			root = recoverTree(nodes, ref stream, ref nodeCount);
+			buffer = output;
+
+			for (i = 0; i < outputSize; ++i)
+			{
+				node = root;
+
+				while (node.Symbol < 0)
+				{
+					if (Convert.ToBoolean(readBit(ref stream)))
+						node = node.ChildB;
+					else
+						node = node.ChildA;
+				}
+
+				buffer[i] = (byte)node.Symbol;
+			}
 		}
 
 
