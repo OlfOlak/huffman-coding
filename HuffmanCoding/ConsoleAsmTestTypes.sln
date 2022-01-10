@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleAsmTestTypes", "Cons
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DllAsm", "DllAsm\DllAsm.vcxproj", "{4F77BC13-4F7B-4406-AF46-8F732B166C44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DllCSharp", "DllCSharp\DllCSharp.csproj", "{C8413434-80B1-4B94-BE64-A26C3A73BFA6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -43,6 +45,18 @@ Global
 		{4F77BC13-4F7B-4406-AF46-8F732B166C44}.Release|x64.Build.0 = Release|x64
 		{4F77BC13-4F7B-4406-AF46-8F732B166C44}.Release|x86.ActiveCfg = Release|Win32
 		{4F77BC13-4F7B-4406-AF46-8F732B166C44}.Release|x86.Build.0 = Release|Win32
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Debug|x64.Build.0 = Debug|Any CPU
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Debug|x86.Build.0 = Debug|Any CPU
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Release|x64.ActiveCfg = Release|Any CPU
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Release|x64.Build.0 = Release|Any CPU
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Release|x86.ActiveCfg = Release|Any CPU
+		{C8413434-80B1-4B94-BE64-A26C3A73BFA6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

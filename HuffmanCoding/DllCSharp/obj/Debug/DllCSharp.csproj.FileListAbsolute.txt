@@ -1,0 +1,6 @@
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\DllCSharp\bin\Debug\DllCSharp.dll
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\DllCSharp\bin\Debug\DllCSharp.pdb
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\DllCSharp\obj\Debug\DllCSharp.csproj.AssemblyReference.cache
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\DllCSharp\obj\Debug\DllCSharp.csproj.CoreCompileInputs.cache
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\DllCSharp\obj\Debug\DllCSharp.dll
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\DllCSharp\obj\Debug\DllCSharp.pdb
