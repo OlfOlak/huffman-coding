@@ -1,0 +1,14 @@
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\bin\Debug\netcoreapp3.1\HuffmanCoding.exe
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\bin\Debug\netcoreapp3.1\HuffmanCoding.deps.json
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\bin\Debug\netcoreapp3.1\HuffmanCoding.runtimeconfig.json
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\bin\Debug\netcoreapp3.1\HuffmanCoding.runtimeconfig.dev.json
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\bin\Debug\netcoreapp3.1\HuffmanCoding.dll
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\bin\Debug\netcoreapp3.1\HuffmanCoding.pdb
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\obj\Debug\netcoreapp3.1\HuffmanCoding.csproj.AssemblyReference.cache
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\obj\Debug\netcoreapp3.1\HuffmanCoding.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\obj\Debug\netcoreapp3.1\HuffmanCoding.AssemblyInfoInputs.cache
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\obj\Debug\netcoreapp3.1\HuffmanCoding.AssemblyInfo.cs
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\obj\Debug\netcoreapp3.1\HuffmanCoding.csproj.CoreCompileInputs.cache
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\obj\Debug\netcoreapp3.1\HuffmanCoding.dll
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\obj\Debug\netcoreapp3.1\HuffmanCoding.pdb
+C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\HuffmanCoding\HuffmanCoding\obj\Debug\netcoreapp3.1\HuffmanCoding.genruntimeconfig.cache
