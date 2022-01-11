@@ -285,7 +285,7 @@ namespace DllCSharp
 			return (int)totalBytes;
 		}
 
-		public static void Decompress(byte[] input, byte[] output, uint inputSize, uint outputSize)
+		public static void Decompress(byte[] input, List<byte> output, uint outputSize)
 		{
 			DecodeNode[] nodes = new DecodeNode[MAX_TREE_NODES];
 
@@ -297,31 +297,56 @@ namespace DllCSharp
 			DecodeNode root, node;
 			BitStream stream = new BitStream();
 			uint i, nodeCount;
-			byte[] buffer;
 
-			if (inputSize < 1)
+			if (input.Length < 1)
 				return;
 
 			initBitstream(ref stream, input);
 			nodeCount = 0;
-			root = recoverTree(nodes, ref stream, ref nodeCount);
-			buffer = output;
+			root = recoverTree(nodes, ref stream, ref nodeCount);;
 
-			for (i = 0; i < outputSize; ++i)
-			{
+			for (i = 0; i < outputSize; ++i) {
 				node = root;
-
-				while (node.Symbol < 0)
-				{
+				while (node.Symbol < 0)	{
 					if (Convert.ToBoolean(readBit(ref stream)))
+                    {
 						node = node.ChildB;
-					else
+                    } else
+                    {
 						node = node.ChildA;
+					}
 				}
+				output.Add((byte)node.Symbol);
+			}
+		}
+		public static void iterateTree(DecodeNode root)
+		{
+			DecodeNode node = root;
 
-				buffer[i] = (byte)node.Symbol;
+			while (node.ChildA != null && node.ChildB != null)
+			{
+				if (node.ChildA != null && node.ChildB != null){
+					asd.Add((byte)node.Symbol);
+					iterateTree(node.ChildA);
+					iterateTree(node.ChildB);
+					break;
+				}
+				else if (node.ChildA != null)
+				{
+					asd.Add((byte)node.Symbol);
+					iterateTree(node.ChildA);
+					break;
+				}
+				else
+				{
+					asd.Add((byte)node.Symbol);
+					iterateTree(node.ChildB);
+					break;
+				}
+				return;
 			}
 		}
 
+		public static List<byte> asd = new List<byte>();
 	}
 }
