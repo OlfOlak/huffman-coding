@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.InteropServices;
+using static DllCSharp.HuffmanCoding;
 
 namespace ConsoleAsmTestTypes
 {
@@ -31,8 +31,22 @@ namespace ConsoleAsmTestTypes
 
         static void Main(string[] args)
         {
+			byte[] originalData = File.ReadAllBytes("original.txt");
+			uint originalDataSize = (uint)originalData.Length;
+			byte[] compressedData = new byte[originalDataSize * (101 / 100) + 320];
 
-            Console.WriteLine("Welcome to Huffman compression");
+			int compressedDataSize = Compress(originalData, compressedData, originalDataSize);
+
+			File.WriteAllBytes("compressed.txt", compressedData.Take(compressedDataSize).ToArray());
+
+			//byte[] decompressedData = new byte[originalDataSize];
+            List<byte> decompressedData = new List<byte>();
+
+            byte[] compressedFile = File.ReadAllBytes("compressed.txt");
+
+            Decompress(compressedFile, decompressedData, originalDataSize);
+
+            File.WriteAllBytes("decompressed.txt", decompressedData.ToArray());
 
             //unsafe
             //{
@@ -56,9 +70,7 @@ namespace ConsoleAsmTestTypes
             //        }
             //    }
             //}
-           
         }
 
-      
-    }
+	}
 }
