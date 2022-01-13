@@ -9,8 +9,35 @@
 
 ; ENCODE
 
-encode proc
+; Oryginalny encode
+encode_original proc
     mov r15, [rsp + 8]
+    push r15
+
+    call count
+    call sort
+    call tree
+    call generate
+
+    ; Print 
+    push rcx
+    push rax
+    call print
+    add rsp, 16
+
+    call print_line
+
+    add rsp, 8
+    ret
+
+encode_original endp
+
+; Próba zapakowania stringa do procedury
+encode proc wordFile:PTR BYTE, arrayLen:DWORD
+
+    mov r15, wordFile
+
+    ;mov r15, [rsp + 8]
     push r15
 
     call count

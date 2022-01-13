@@ -11,7 +11,7 @@ namespace ConsoleAsmTestTypes
     {
         //Zadanie 1
         [DllImport("DllAsm.dll")]   
-        private static unsafe extern uint encode(); 
+        private static unsafe extern uint encode(char * charPtr); 
 
         //Zadanie 2
         [DllImport("DllAsm.dll")]
@@ -31,7 +31,9 @@ namespace ConsoleAsmTestTypes
 
         static void Main(string[] args)
         {
-            encode();
+            //char c = 'w';
+            //char* charPtr = &c;
+            //encode(charPtr);
 
 			byte[] originalData = File.ReadAllBytes("original.txt");
 			uint originalDataSize = (uint)originalData.Length;
