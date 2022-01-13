@@ -11,11 +11,11 @@ namespace ConsoleAsmTestTypes
     {
         //Zadanie 1
         [DllImport("DllAsm.dll")]   
-        private static unsafe extern uint zad1(uint* array, uint length); 
+        private static unsafe extern uint encode(); 
 
         //Zadanie 2
         [DllImport("DllAsm.dll")]
-        private static unsafe extern void zad2(StructZad2* pStrZad2);
+        private static unsafe extern void decode(StructZad2* pStrZad2);
 
         public static StructZad2 structZad2 = new StructZad2();
         public static float[] tab1 = new float[] { 1.0f, 2.0f, 3.0f, 4.0f, 5.0f, 6.0f, 7.0f, 8.0f, 9.0f, 10.0f, 11.0f, 12.0f, 13.0f, 14.0f, 15.0f, 16.0f };
@@ -31,6 +31,8 @@ namespace ConsoleAsmTestTypes
 
         static void Main(string[] args)
         {
+            encode();
+
 			byte[] originalData = File.ReadAllBytes("original.txt");
 			uint originalDataSize = (uint)originalData.Length;
 			byte[] compressedData = new byte[originalDataSize * (101 / 100) + 320];

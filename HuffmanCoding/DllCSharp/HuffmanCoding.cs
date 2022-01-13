@@ -257,6 +257,7 @@ namespace DllCSharp
 				swaps = 0;
 
 				for (i = 0; i < 255; ++i)
+				for (i = 0; i < 255; ++i)
 				{
 					if (sym[i].Sym > sym[i + 1].Sym)
 					{
