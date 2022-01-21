@@ -99,14 +99,6 @@ namespace ConsoleAsmTestTypes
             compressedBytes.Add(bytes[0]);
         }
 
-        public static void convertByteToBits(byte[] bytes)
-        {
-            foreach (byte element in bytes)
-            {
-                decompressedBits.Add(Convert.ToString(element, 2).PadLeft(8, '0'));
-            }
-        }
-
         public static HuffmanNode getNodeFromBits(HuffmanNode nodeList, string searchBitsState)
         {
             if (searchBitsState.Length == 0 || nodeList.isLeaf == true)

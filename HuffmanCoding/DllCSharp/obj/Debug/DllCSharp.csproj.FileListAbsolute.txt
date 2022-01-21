@@ -9,4 +9,3 @@ C:\Users\pawee\huffman-coding\HuffmanCoding\DllCSharp\bin\Debug\DllCSharp.pdb
 C:\Users\pawee\huffman-coding\HuffmanCoding\DllCSharp\obj\Debug\DllCSharp.csproj.CoreCompileInputs.cache
 C:\Users\pawee\huffman-coding\HuffmanCoding\DllCSharp\obj\Debug\DllCSharp.dll
 C:\Users\pawee\huffman-coding\HuffmanCoding\DllCSharp\obj\Debug\DllCSharp.pdb
-C:\Users\pawee\huffman-coding\HuffmanCoding\DllCSharp\obj\Debug\DllCSharp.csproj.AssemblyReference.cache
