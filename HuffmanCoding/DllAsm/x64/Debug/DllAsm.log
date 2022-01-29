@@ -1,4 +1,4 @@
 ﻿  Assembling DLLAsmLibrary.asm...
-     Creating library C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\DllAsm.lib and object C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\DllAsm.exp
-DllAsm.exp : warning LNK4070: /OUT:AsmDll.dll directive in .EXP differs from output filename 'C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\DllAsm.dll'; ignoring directive
-  DllAsm.vcxproj -> C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\DllAsm.dll
+     Creating library C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\x64\Debug\DllAsm.lib and object C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\x64\Debug\DllAsm.exp
+DllAsm.exp : warning LNK4070: /OUT:AsmDll.dll directive in .EXP differs from output filename 'C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\x64\Debug\DllAsm.dll'; ignoring directive
+  DllAsm.vcxproj -> C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\x64\Debug\DllAsm.dll

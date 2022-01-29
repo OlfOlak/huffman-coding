@@ -14,3 +14,10 @@ C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\Co
 C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.csproj.CopyComplete
 C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.exe
 C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.pdb
+C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.csproj.AssemblyReference.cache
+C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.csproj.CoreCompileInputs.cache
+C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.exe
+C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.pdb
+C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.exe.config
+C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.exe
+C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.pdb

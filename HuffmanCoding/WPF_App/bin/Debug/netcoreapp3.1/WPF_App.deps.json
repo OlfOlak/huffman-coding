@@ -1,0 +1,49 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "WPF_App/1.0.0": {
+        "dependencies": {
+          "ConsoleAsmTestTypes": "1.0.0"
+        },
+        "runtime": {
+          "WPF_App.dll": {}
+        }
+      },
+      "ConsoleAsmTestTypes/1.0.0": {
+        "runtime": {
+          "ConsoleAsmTestTypes.exe": {}
+        }
+      },
+      "DllCSharp/1.0.0.0": {
+        "runtime": {
+          "DllCSharp.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "WPF_App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ConsoleAsmTestTypes/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DllCSharp/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
