@@ -26,19 +26,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Olaf\\.nuget\\packages\\": {}
+    "C:\\Users\\pawee\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Olaf\\Documents\\Studia\\JA\\Projekt\\huffman-coding\\HuffmanCoding\\WPF_App\\WPF_App.csproj",
+      "projectUniqueName": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\WPF_App\\WPF_App.csproj",
       "projectName": "WPF_App",
-      "projectPath": "C:\\Users\\Olaf\\Documents\\Studia\\JA\\Projekt\\huffman-coding\\HuffmanCoding\\WPF_App\\WPF_App.csproj",
-      "packagesPath": "C:\\Users\\Olaf\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Olaf\\Documents\\Studia\\JA\\Projekt\\huffman-coding\\HuffmanCoding\\WPF_App\\obj\\",
+      "projectPath": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\WPF_App\\WPF_App.csproj",
+      "packagesPath": "C:\\Users\\pawee\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\WPF_App\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Olaf\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\pawee\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -52,8 +52,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Olaf\\Documents\\Studia\\JA\\Projekt\\huffman-coding\\HuffmanCoding\\ConsoleAsmTestTypes\\ConsoleAsmTestTypes.csproj": {
-              "projectPath": "C:\\Users\\Olaf\\Documents\\Studia\\JA\\Projekt\\huffman-coding\\HuffmanCoding\\ConsoleAsmTestTypes\\ConsoleAsmTestTypes.csproj"
+            "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\ConsoleAsmTestTypes\\ConsoleAsmTestTypes.csproj": {
+              "projectPath": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\ConsoleAsmTestTypes\\ConsoleAsmTestTypes.csproj"
             }
           }
         }
@@ -85,7 +85,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

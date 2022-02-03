@@ -1,2 +1,2 @@
 LIBRARY AsmDll
-EXPORTS ConvertBytes
+EXPORTS CountCharFrequencyAsm

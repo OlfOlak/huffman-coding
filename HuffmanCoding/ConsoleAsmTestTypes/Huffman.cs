@@ -11,20 +11,20 @@ namespace ConsoleAsmTestTypes
         public static List<byte> compressedBytes = new List<byte>();
         public static List<string> decompressedBits = new List<string>();
         public static long fileSize = 0;
+        public static int[] charFrequency;
 
-        public static List<HuffmanNode> getListFromFile(string path)
+        public static List<HuffmanNode> getListFromFile(int[] file)
         {
             List<HuffmanNode> nodeList = new List<HuffmanNode>();
             try
             {
-                FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
-                for (int i = 0; i < stream.Length; i++)
+                for (int i = 0; i < file.Length; i++)
                 {
-                    string read = Convert.ToChar(stream.ReadByte()).ToString();
+                    string read = Convert.ToChar(file[i]).ToString();
                     if (nodeList.Exists(x => x.symbol == read))
                     {
                         int index = nodeList.FindIndex(y => y.symbol == read);
-                        nodeList[index].frequencyIncrease();
+                        nodeList[index].frequency = charFrequency[file[i]];
                         nodeList[index].indexes.Add(i);
                     }
                     else
@@ -34,7 +34,7 @@ namespace ConsoleAsmTestTypes
                         nodeList.Add(newItem);
                     }
                 }
-                fileSize = stream.Length;
+                fileSize = file.Length;
                 nodeList.Sort();
                 return nodeList;
             }
@@ -138,6 +138,37 @@ namespace ConsoleAsmTestTypes
             }
 
             File.WriteAllText(fileName, String.Join("", resultText.Select(p => p != null ? p.ToString() : "").ToArray()));
+        }
+
+        public static int[] getIntsArrayFromFile(string path)
+        {
+            try
+            {
+                FileStream stream = new FileStream(path, FileMode.Open, FileAccess.Read);
+                List<int> intsList = new List<int>();
+                for (int i = 0; i < stream.Length; i++)
+                {
+                    int readAsInt = Convert.ToInt32(stream.ReadByte());
+                    intsList.Add(readAsInt);
+                }
+
+                int[] intsArray = intsList.ToArray();
+                int length = intsArray.Length;
+
+                return intsArray;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
+
+        public static void convertByteToBits(byte[] bytes)
+        {
+            foreach (byte element in bytes)
+            {
+                decompressedBits.Add(Convert.ToString(element, 2).PadLeft(8, '0'));
+            }
         }
     }
 }

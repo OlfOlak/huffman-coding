@@ -53,10 +53,5 @@ namespace ConsoleAsmTestTypes
         {
             return this.frequency.CompareTo(otherNode.frequency);
         }
-
-        public void frequencyIncrease()
-        {
-            frequency++;
-        }
     }
 }
