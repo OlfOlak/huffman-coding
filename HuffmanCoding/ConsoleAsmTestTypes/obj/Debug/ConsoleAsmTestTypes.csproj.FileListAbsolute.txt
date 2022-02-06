@@ -1,0 +1,8 @@
+C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.exe.config
+C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.exe
+C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.pdb
+C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\Debug\ConsoleAsmTestTypes.csproj.AssemblyReference.cache
+C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\Debug\ConsoleAsmTestTypes.csproj.CoreCompileInputs.cache
+C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\Debug\ConsoleAsmTestTypes.csproj.CopyComplete
+C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\Debug\ConsoleAsmTestTypes.exe
+C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\Debug\ConsoleAsmTestTypes.pdb

@@ -9,7 +9,6 @@ C:\Users\Olaf\Documents\Visual Studio 2019\Projects\HuffmanCoding\ConsoleAsmTest
 C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.exe.config
 C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.exe
 C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.pdb
-C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.csproj.AssemblyReference.cache
 C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.csproj.CoreCompileInputs.cache
 C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.csproj.CopyComplete
 C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.exe
@@ -21,3 +20,4 @@ C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\ConsoleAs
 C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.exe.config
 C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.exe
 C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\x64\Debug\ConsoleAsmTestTypes.pdb
+C:\Users\pawee\huffman-coding\HuffmanCoding\ConsoleAsmTestTypes\obj\x64\Debug\ConsoleAsmTestTypes.csproj.AssemblyReference.cache

@@ -6,8 +6,29 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>TRACE</DefineConstants>
+    <OutputPath>C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+  </PropertyGroup>
+
   <ItemGroup>
-    <ProjectReference Include="..\ConsoleAsmTestTypes\ConsoleAsmTestTypes.csproj" />
+    <ProjectReference Include="..\DllAsm\DllAsm.vcxproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="DllCSharp">
+      <HintPath>..\x64\Debug\DllCSharp.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

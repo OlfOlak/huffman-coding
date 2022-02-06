@@ -3,6 +3,9 @@ using System;
 using System.Windows;
 using ConsoleAsmTestTypes;
 using System.IO;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
+using static DllCSharp.CharFrequency;
 
 namespace WPF_App
 {
@@ -19,6 +22,12 @@ namespace WPF_App
         private const String INPUT_FILE_FILTER = "Text files (*.txt)|*.txt|All file (*.*)|*.*";
         private const String OUTPUT_FILE_FILTER = "Text file(*.txt)|*.txt";
 
+
+        public static int[] flag = { 1, 1, 1, 1 };
+        public static int[] resultData = new int[255];
+
+        [DllImport("DllAsm.dll")]
+        private static unsafe extern uint CountCharFrequencyAsm(int* a, int* b, int* c, long* d);
         public MainWindow()
         {
             InitializeComponent();
@@ -49,7 +58,7 @@ namespace WPF_App
             if (libSelected != null && filepath != null)
             {
                 // Run program.
-                Program.Run(libSelected, filepath);
+                run(libSelected, filepath);
 
                 compressedFilenameText.Text = COMPRESSED_FILENAME;
                 FileInfo fileinfo = new FileInfo(COMPRESSED_FILENAME);
@@ -104,13 +113,13 @@ namespace WPF_App
         private void csharpRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             validateRadioButtonsCheck();
-            libSelected = "csharp";
+            libSelected = "c#";
         }
 
         private void assemblyRadioButton_Checked(object sender, RoutedEventArgs e)
         {
             validateRadioButtonsCheck();
-            libSelected = "assembly";
+            libSelected = "asm";
         }
 
         private void btnSaveCompressedFile_Click(object sender, RoutedEventArgs e)
@@ -133,6 +142,45 @@ namespace WPF_App
             {
                 File.WriteAllText(saveFileDialog.FileName, File.ReadAllText(DECOMPRESSED_FILENAME));
             }
+        }
+
+        private void run(string libSelected, string filepath)
+        {
+            List<HuffmanNode> nodeList;
+            int[] readFile = Huffman.getIntsArrayFromFile(filepath);
+            int length = readFile.Length;
+
+            if (libSelected == "asm")
+            {
+                long longVal = Convert.ToInt64(length);
+
+                unsafe
+                {
+                    long* lengthPtr = &longVal;
+                    fixed (int* aArg1Addr = &readFile[0], aArg2Addr = &flag[0], aResultsAddr = &resultData[0])
+                    {
+                        CountCharFrequencyAsm(aArg1Addr, aArg2Addr, aResultsAddr, lengthPtr);
+                    }
+                }
+
+                Huffman.charFrequency = resultData;
+            } else {
+                Huffman.charFrequency = CountCharFrequency(readFile, resultData);
+            }
+
+            nodeList = Huffman.getListFromFile(readFile);
+
+            Huffman.getTreeFromList(nodeList);
+
+            Huffman.setCodeToTheTree("", nodeList[0]);
+
+            Huffman.saveCompressedTree(COMPRESSED_FILENAME);
+
+            byte[] compressedFile = File.ReadAllBytes(COMPRESSED_FILENAME);
+
+            Huffman.convertByteToBits(compressedFile);
+
+            Huffman.saveDecompressedTree(nodeList[0], DECOMPRESSED_FILENAME);
         }
     }
 }

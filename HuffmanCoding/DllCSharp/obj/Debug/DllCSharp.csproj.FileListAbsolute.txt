@@ -14,3 +14,6 @@ C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\DllCSharp
 C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\DllCSharp\obj\Debug\DllCSharp.pdb
 C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\DllCSharp\bin\Debug\DllCSharp.dll
 C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\DllCSharp\bin\Debug\DllCSharp.pdb
+C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\DllCSharp.dll
+C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\DllCSharp.pdb
+C:\Users\pawee\huffman-coding\HuffmanCoding\DllCSharp\obj\Debug\DllCSharp.csproj.AssemblyReference.cache

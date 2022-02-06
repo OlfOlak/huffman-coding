@@ -48,3 +48,9 @@ C:\Users\pawee\huffman-coding\HuffmanCoding\WPF_App\obj\Debug\netcoreapp3.1\WPF_
 C:\Users\pawee\huffman-coding\HuffmanCoding\WPF_App\obj\Debug\netcoreapp3.1\WPF_App.dll
 C:\Users\pawee\huffman-coding\HuffmanCoding\WPF_App\obj\Debug\netcoreapp3.1\WPF_App.pdb
 C:\Users\pawee\huffman-coding\HuffmanCoding\WPF_App\obj\Debug\netcoreapp3.1\WPF_App.genruntimeconfig.cache
+C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\netcoreapp3.1\WPF_App.exe
+C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\netcoreapp3.1\WPF_App.deps.json
+C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\netcoreapp3.1\WPF_App.runtimeconfig.json
+C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\netcoreapp3.1\WPF_App.runtimeconfig.dev.json
+C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\netcoreapp3.1\WPF_App.dll
+C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\netcoreapp3.1\WPF_App.pdb
