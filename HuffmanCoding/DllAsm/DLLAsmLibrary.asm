@@ -2,7 +2,7 @@
 CountCharFrequencyAsm proc
 
     mov rdi, 0
-    mov r15, [r9]
+    mov r15, 5000
     add r15, 4
 
 _loopMain:    

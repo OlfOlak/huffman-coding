@@ -57,23 +57,7 @@ namespace WPF_App
             
             if (libSelected != null && filepath != null)
             {
-                // Run program.
                 run(libSelected, filepath);
-
-                compressedFilenameText.Text = COMPRESSED_FILENAME;
-                FileInfo fileinfo = new FileInfo(COMPRESSED_FILENAME);
-                compressedFilesizeText.Text = getFileSize(fileinfo.Length);
-
-                decompressedFilenameText.Text = DECOMPRESSED_FILENAME;
-                fileinfo = new FileInfo(DECOMPRESSED_FILENAME);
-                decompressedFilesizeText.Text = getFileSize(fileinfo.Length);
-
-                // TODO: Podac czas wykonania
-                processingTimeText.Text = "12345 ms";
-
-                compressedStackPanel.Visibility = Visibility.Visible;
-                decompressedStackPanel.Visibility = Visibility.Visible;
-                processingTimeStackPanel.Visibility = Visibility.Visible;
             }
         }
 
@@ -146,20 +130,18 @@ namespace WPF_App
 
         private void run(string libSelected, string filepath)
         {
+            var watch = System.Diagnostics.Stopwatch.StartNew();
             List<HuffmanNode> nodeList;
             int[] readFile = Huffman.getIntsArrayFromFile(filepath);
-            int length = readFile.Length;
 
             if (libSelected == "asm")
             {
-                long longVal = Convert.ToInt64(length);
-
                 unsafe
                 {
-                    long* lengthPtr = &longVal;
                     fixed (int* aArg1Addr = &readFile[0], aArg2Addr = &flag[0], aResultsAddr = &resultData[0])
                     {
-                        CountCharFrequencyAsm(aArg1Addr, aArg2Addr, aResultsAddr, lengthPtr);
+                        var fileLength = Convert.ToInt64(readFile.Length);
+                        CountCharFrequencyAsm(aArg1Addr, aArg2Addr, aResultsAddr, &fileLength);                
                     }
                 }
 
@@ -181,6 +163,10 @@ namespace WPF_App
             Huffman.convertByteToBits(compressedFile);
 
             Huffman.saveDecompressedTree(nodeList[0], DECOMPRESSED_FILENAME);
+
+            watch.Stop();
+            var elapsedMs = watch.ElapsedMilliseconds;
+            processingTimeText.Text = Convert.ToString(elapsedMs);
         }
     }
 }
