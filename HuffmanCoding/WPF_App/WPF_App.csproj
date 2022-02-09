@@ -9,7 +9,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <DefineConstants>TRACE</DefineConstants>
-    <OutputPath>C:\Users\pawee\huffman-coding\HuffmanCoding\x64\Debug\</OutputPath>
+    <OutputPath>C:\Users\Olaf\Documents\Studia\JA\Projekt\huffman-coding\HuffmanCoding\x64\Debug\</OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">

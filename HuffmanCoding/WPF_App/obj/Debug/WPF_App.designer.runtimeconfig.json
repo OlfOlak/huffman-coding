@@ -6,8 +6,8 @@
       "version": "3.1.0"
     },
     "additionalProbingPaths": [
-      "C:\\Users\\pawee\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\pawee\\.nuget\\packages"
+      "C:\\Users\\Olaf\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\Olaf\\.nuget\\packages"
     ],
     "configProperties": {
       "Microsoft.NETCore.DotNetHostPolicy.SetAppPaths": true
