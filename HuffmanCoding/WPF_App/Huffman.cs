@@ -25,12 +25,10 @@ namespace ConsoleAsmTestTypes
                     {
                         int index = nodeList.FindIndex(y => y.symbol == read);
                         nodeList[index].frequency = charFrequency[file[i]];
-                        nodeList[index].indexes.Add(i);
                     }
                     else
                     {
                         HuffmanNode newItem = new HuffmanNode(read);
-                        newItem.indexes.Add(i);
                         nodeList.Add(newItem);
                     }
                 }
@@ -50,11 +48,11 @@ namespace ConsoleAsmTestTypes
             while (nodeList.Count > 1)
             {
                 HuffmanNode node1 = nodeList[0];
-                nodeList.RemoveAt(0); 
-                HuffmanNode node2 = nodeList[0]; 
-                nodeList.RemoveAt(0);    
-                nodeList.Add(new HuffmanNode(node1, node2)); 
-                nodeList.Sort();   
+                nodeList.RemoveAt(0);
+                HuffmanNode node2 = nodeList[0];
+                nodeList.RemoveAt(0);
+                nodeList.Add(new HuffmanNode(node1, node2));
+                nodeList.Sort();
             }
         }
 
@@ -65,38 +63,71 @@ namespace ConsoleAsmTestTypes
             if (Nodes.leftTree == null && Nodes.rightTree == null)
             {
                 Nodes.code = code;
-                convertBitToBytes(code);
                 return;
             }
             setCodeToTheTree(code + "0", Nodes.leftTree);
             setCodeToTheTree(code + "1", Nodes.rightTree);
         }
 
-        private static void convertBitToBytes(string bits)
+        private static byte[] convertBitToBytes(int[] file, HuffmanNode node)
         {
-            var bitsToArray = new BitArray(bits.Select(s => s == '1').ToArray());
-            int numBytes = bitsToArray.Length / 8;
-
-            if (bitsToArray.Length % 8 != 0) numBytes++;
-
-            byte[] bytes = new byte[numBytes];
+            List<byte> resultBytes = new List<byte>();
             int byteIndex = 0, bitIndex = 0;
+            byte[] bytes = new byte[1];
 
-            for (int i = 0; i < bitsToArray.Length; i++)
+            for (int i = 0; i < file.Length; i++)
             {
-                if (bitsToArray[i])
-                {
-                    bytes[byteIndex] |= (byte)(1 << (7 - bitIndex));
-                }
+                string read = Convert.ToChar(file[i]).ToString();
+                string code = getCodeFromChar(node, read).code;
 
-                bitIndex++;
-                if (bitIndex == 8)
+                var bitsToArray = new BitArray(code.Select(s => s == '1').ToArray());
+
+                for (int c = 0; c < bitsToArray.Length; c++)
                 {
-                    bitIndex = 0;
-                    byteIndex++;
+                    if (bitsToArray[c])
+                    {
+                        bytes[0] |= (byte)(1 << (7 - bitIndex));
+                    }
+
+                    bitIndex++;
+                    if (bitIndex == 8)
+                    {
+                        bitIndex = 0;
+                        resultBytes.AddRange(bytes);
+                        bytes = new byte[1];
+                    }
                 }
             }
-            compressedBytes.Add(bytes[0]);
+
+            if (bitIndex > 0)
+            {
+                resultBytes.AddRange(bytes);
+            }
+
+            return resultBytes.ToArray();
+        }
+
+        public static HuffmanNode getCodeFromChar(HuffmanNode nodeList, string searchChar)
+        {
+            if (nodeList != null)
+            {
+                if (nodeList.symbol == searchChar)
+                {
+                    return nodeList;
+                }
+
+                if (nodeList.rightTree.symbol.Contains(searchChar))
+                {
+                    return getCodeFromChar(nodeList.rightTree, searchChar);
+                }
+                else if (nodeList.leftTree.symbol.Contains(searchChar))
+                {
+                    return getCodeFromChar(nodeList.leftTree, searchChar);
+                }
+
+            }
+
+            return nodeList;
         }
 
         public static HuffmanNode getNodeFromBits(HuffmanNode nodeList, string searchBitsState)
@@ -116,28 +147,31 @@ namespace ConsoleAsmTestTypes
             }
         }
 
-        public static void saveCompressedTree(string fileName)
+        public static void saveCompressedTree(int[] file, HuffmanNode node, string fileName)
         {
-            File.WriteAllBytes(fileName, compressedBytes.ToArray());
+            File.WriteAllBytes(fileName, convertBitToBytes(file, node));
         }
 
         public static void saveDecompressedTree(HuffmanNode nodeList, string fileName)
         {
-            string[] resultText = new string[fileSize];
             HuffmanNode searchedNode;
-            foreach (var bits in decompressedBits)
+            string fullBits = String.Join("", decompressedBits);
+            string fileResult = "";
+            while (fullBits.Length > 0)
             {
-                searchedNode = getNodeFromBits(nodeList, bits);
+                searchedNode = getNodeFromBits(nodeList, fullBits);
                 if (searchedNode != null)
                 {
-                    foreach (var index in searchedNode.indexes)
-                    {
-                        resultText[index] = searchedNode.symbol;
-                    }
+                    fullBits = fullBits.Remove(0, searchedNode.code.Length);
+                    fileResult += searchedNode.symbol;
+                }
+                if (fileResult.Length == fileSize)
+                {
+                    break;
                 }
             }
 
-            File.WriteAllText(fileName, String.Join("", resultText.Select(p => p != null ? p.ToString() : "").ToArray()));
+            File.WriteAllText(fileName, fileResult);
         }
 
         public static int[] getIntsArrayFromFile(string path)

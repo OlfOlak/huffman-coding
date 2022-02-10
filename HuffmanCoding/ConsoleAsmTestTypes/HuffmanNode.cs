@@ -12,7 +12,6 @@ namespace ConsoleAsmTestTypes
         public HuffmanNode leftTree;  
         public HuffmanNode rightTree;
         public bool isLeaf;
-        public List<int> indexes = new List<int>();
 
         public HuffmanNode(string value)
         {

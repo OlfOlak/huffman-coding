@@ -6,13 +6,12 @@ namespace ConsoleAsmTestTypes
     public class HuffmanNode : IComparable<HuffmanNode>
     {
         public string symbol;
-        public int frequency; 
-        public string code; 
+        public int frequency;
+        public string code;
         public HuffmanNode parentNode;
-        public HuffmanNode leftTree;  
+        public HuffmanNode leftTree;
         public HuffmanNode rightTree;
         public bool isLeaf;
-        public List<int> indexes = new List<int>();
 
         public HuffmanNode(string value)
         {

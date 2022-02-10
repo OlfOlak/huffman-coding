@@ -2,15 +2,6 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
-      "ConsoleAsmTestTypes/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/ConsoleAsmTestTypes.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/ConsoleAsmTestTypes.dll": {}
-        }
-      },
       "DllAsm/1.0.0": {
         "type": "project",
         "compile": {
@@ -23,11 +14,6 @@
     }
   },
   "libraries": {
-    "ConsoleAsmTestTypes/1.0.0": {
-      "type": "project",
-      "path": "../ConsoleAsmTestTypes/ConsoleAsmTestTypes.csproj",
-      "msbuildProject": "../ConsoleAsmTestTypes/ConsoleAsmTestTypes.csproj"
-    },
     "DllAsm/1.0.0": {
       "type": "project",
       "path": "../DllAsm/DllAsm.vcxproj",
@@ -36,7 +22,6 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "ConsoleAsmTestTypes >= 1.0.0",
       "DllAsm >= 1.0.0"
     ]
   },
@@ -67,9 +52,6 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\ConsoleAsmTestTypes\\ConsoleAsmTestTypes.csproj": {
-              "projectPath": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\ConsoleAsmTestTypes\\ConsoleAsmTestTypes.csproj"
-            },
             "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj": {
               "projectPath": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj"
             }

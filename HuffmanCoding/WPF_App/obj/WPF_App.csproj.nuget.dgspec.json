@@ -4,16 +4,6 @@
     "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\WPF_App\\WPF_App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\ConsoleAsmTestTypes\\ConsoleAsmTestTypes.csproj": {
-      "restore": {
-        "projectUniqueName": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\ConsoleAsmTestTypes\\ConsoleAsmTestTypes.csproj",
-        "projectName": "ConsoleAsmTestTypes",
-        "projectPath": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\ConsoleAsmTestTypes\\ConsoleAsmTestTypes.csproj"
-      },
-      "frameworks": {
-        "net472": {}
-      }
-    },
     "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj": {
       "restore": {
         "projectUniqueName": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj",
@@ -48,9 +38,6 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\ConsoleAsmTestTypes\\ConsoleAsmTestTypes.csproj": {
-                "projectPath": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\ConsoleAsmTestTypes\\ConsoleAsmTestTypes.csproj"
-              },
               "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj": {
                 "projectPath": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj"
               }

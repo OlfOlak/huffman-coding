@@ -27,7 +27,7 @@ namespace WPF_App
         public static int[] resultData = new int[255];
 
         [DllImport("DllAsm.dll")]
-        private static unsafe extern uint CountCharFrequencyAsm(int* a, int* b, int* c, long* d);
+        private static unsafe extern uint CountCharFrequencyAsm(int* a, long* b, int* c);
         public MainWindow()
         {
             InitializeComponent();
@@ -63,13 +63,7 @@ namespace WPF_App
 
         private String getFileSize(long length)
         {
-            if (length < 1024)
-            {
-                return Convert.ToString(length) + " B";
-            } else
-            {
-                return Convert.ToString(length / 1024) + " kB";
-            }
+            return Convert.ToString(length) + " B";
         }
 
         private void validateRadioButtonsCheck()
@@ -141,7 +135,7 @@ namespace WPF_App
                     fixed (int* aArg1Addr = &readFile[0], aArg2Addr = &flag[0], aResultsAddr = &resultData[0])
                     {
                         var fileLength = Convert.ToInt64(readFile.Length);
-                        CountCharFrequencyAsm(aArg1Addr, aArg2Addr, aResultsAddr, &fileLength);                
+                        CountCharFrequencyAsm(aArg1Addr, &fileLength, aResultsAddr);
                     }
                 }
 
@@ -156,7 +150,7 @@ namespace WPF_App
 
             Huffman.setCodeToTheTree("", nodeList[0]);
 
-            Huffman.saveCompressedTree(COMPRESSED_FILENAME);
+            Huffman.saveCompressedTree(readFile, nodeList[0], COMPRESSED_FILENAME);
 
             byte[] compressedFile = File.ReadAllBytes(COMPRESSED_FILENAME);
 
@@ -166,7 +160,16 @@ namespace WPF_App
 
             watch.Stop();
             var elapsedMs = watch.ElapsedMilliseconds;
-            processingTimeText.Text = Convert.ToString(elapsedMs);
+            processingTimeText.Text = Convert.ToString(elapsedMs) + " ms";
+
+            compressedStackPanel.Visibility = Visibility.Visible;
+            decompressedStackPanel.Visibility = Visibility.Visible;
+            processingTimeStackPanel.Visibility = Visibility.Visible;
+
+            compressedFilenameText.Text = COMPRESSED_FILENAME;
+            compressedFilesizeText.Text = (new FileInfo(COMPRESSED_FILENAME)).Length.ToString() + " B";
+            decompressedFilenameText.Text = DECOMPRESSED_FILENAME;
+            decompressedFilesizeText.Text = (new FileInfo(DECOMPRESSED_FILENAME)).Length.ToString() + " B";
         }
     }
 }

@@ -1,14 +1,16 @@
+.data
+    onesArray DWORD 4 dup (1)
 .code
 CountCharFrequencyAsm proc
 
     mov rdi, 0
-    mov r15, 5000
+    mov r15, [RDX]
     add r15, 4
 
 _loopMain:    
     mov rbx, 255
     pxor xmm0, xmm0
-    movups xmm0, DWORD ptr [RDX] ; pass { 1 1 1 1 }
+    movups xmm0, DWORD ptr [onesArray] ; pass { 1 1 1 1 }
     pxor xmm2, xmm2 
     mov rsi, 0
 

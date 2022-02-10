@@ -44,7 +44,9 @@ namespace ConsoleAsmTestTypes
 
             Huffman.getTreeFromList(nodeList);
 
-            Huffman.saveCompressedTree(COMPRESSED_FILENAME);
+            Huffman.setCodeToTheTree("", nodeList[0]);
+
+            Huffman.saveCompressedTree(readFile, nodeList[0], COMPRESSED_FILENAME);
 
             byte[] compressedFile = File.ReadAllBytes(COMPRESSED_FILENAME);
 
