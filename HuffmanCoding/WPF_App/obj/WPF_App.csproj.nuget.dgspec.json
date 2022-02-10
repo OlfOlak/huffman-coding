@@ -4,16 +4,6 @@
     "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\WPF_App\\WPF_App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj": {
-      "restore": {
-        "projectUniqueName": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj",
-        "projectName": "DllAsm",
-        "projectPath": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj"
-      },
-      "frameworks": {
-        "native": {}
-      }
-    },
     "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\WPF_App\\WPF_App.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -37,11 +27,7 @@
         "frameworks": {
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
-            "projectReferences": {
-              "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj": {
-                "projectPath": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj"
-              }
-            }
+            "projectReferences": {}
           }
         },
         "warningProperties": {

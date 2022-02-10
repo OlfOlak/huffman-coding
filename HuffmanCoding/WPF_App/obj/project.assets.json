@@ -1,29 +1,11 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
-      "DllAsm/1.0.0": {
-        "type": "project",
-        "compile": {
-          "bin/placeholder/DllAsm.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DllAsm.dll": {}
-        }
-      }
-    }
+    ".NETCoreApp,Version=v3.1": {}
   },
-  "libraries": {
-    "DllAsm/1.0.0": {
-      "type": "project",
-      "path": "../DllAsm/DllAsm.vcxproj",
-      "msbuildProject": "../DllAsm/DllAsm.vcxproj"
-    }
-  },
+  "libraries": {},
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
-      "DllAsm >= 1.0.0"
-    ]
+    ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
     "C:\\Users\\pawee\\.nuget\\packages\\": {}
@@ -51,11 +33,7 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {
-            "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj": {
-              "projectPath": "C:\\Users\\pawee\\huffman-coding\\HuffmanCoding\\DllAsm\\DllAsm.vcxproj"
-            }
-          }
+          "projectReferences": {}
         }
       },
       "warningProperties": {

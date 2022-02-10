@@ -20,10 +20,6 @@
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
   </PropertyGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\DllAsm\DllAsm.vcxproj" />
-  </ItemGroup>
   
   <ItemGroup>
     <Reference Include="DllCSharp">
